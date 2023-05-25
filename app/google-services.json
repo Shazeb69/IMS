@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "204648022224",
+    "project_id": "invms-ec2ac",
+    "storage_bucket": "invms-ec2ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:204648022224:android:53d78995e55a656aae1ed5",
+        "android_client_info": {
+          "package_name": "com.example.ims"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "204648022224-iegjb22j5hk0hl84mh00nladvm8149dm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4tZd1NwM6T4ODdvC7z0604kfBbWb6wO0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "204648022224-iegjb22j5hk0hl84mh00nladvm8149dm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
