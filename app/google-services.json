@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "204648022224",
+    "firebase_url": "https://invms-ec2ac-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "invms-ec2ac",
     "storage_bucket": "invms-ec2ac.appspot.com"
   },

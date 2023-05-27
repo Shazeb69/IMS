@@ -4,15 +4,129 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".add">
+
+    <EditText
+        android:id="@+id/pn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="86dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Product Name"
+        android:inputType="text"
+        android:text="Product Name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/as1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:contextClickable="true"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Available Stock"
+        android:inputType="text"
+        android:text="Available Stock"
+        app:layout_constraintStart_toStartOf="@+id/pn"
+        app:layout_constraintTop_toBottomOf="@+id/pn" />
+
+    <EditText
+        android:id="@+id/sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="1dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Selling Price"
+        android:inputType="text"
+        android:text="Selling Price"
+        app:layout_constraintEnd_toEndOf="@+id/as1"
+        app:layout_constraintTop_toBottomOf="@+id/as1" />
+
+    <EditText
+        android:id="@+id/ed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Expiry Date"
+        android:inputType="text"
+        android:text="Expiry Date"
+        app:layout_constraintStart_toStartOf="@+id/sp"
+        app:layout_constraintTop_toBottomOf="@+id/sp" />
+
+    <EditText
+        android:id="@+id/cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="19dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Cost Price"
+        android:inputType="text"
+        android:text="Cost Price"
+        app:layout_constraintStart_toStartOf="@+id/ed"
+        app:layout_constraintTop_toBottomOf="@+id/ed" />
+
+    <Button
+        android:id="@+id/vw"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginBottom="192dp"
+        android:text="View"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/del"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Delete"
+        app:layout_constraintBottom_toTopOf="@+id/bt2"
+        app:layout_constraintEnd_toEndOf="@+id/upd" />
 
     <Button
         android:id="@+id/bt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="142dp"
-        android:layout_marginBottom="293dp"
+        android:layout_width="200dp"
+        android:layout_height="46dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginBottom="64dp"
         android:text="SignOut"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ad" />
+
+    <Button
+        android:id="@+id/upd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="24dp"
+        android:text="Update"
+        app:layout_constraintBottom_toTopOf="@+id/del"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/ad"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="17dp"
+        android:text="Add"
+        app:layout_constraintStart_toStartOf="@+id/vw"
+        app:layout_constraintTop_toBottomOf="@+id/vw" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
