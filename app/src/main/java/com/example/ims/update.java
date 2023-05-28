@@ -16,8 +16,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class add extends AppCompatActivity {
-
+public class update extends AppCompatActivity {
     EditText pname, sprice, cprice, astock, edate;
     String product,sellingP, costp, availables, expiryd;
 
@@ -28,8 +27,7 @@ public class add extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_add);
-
+        setContentView(R.layout.activity_update);
         add = findViewById(R.id.button2);
         back = findViewById(R.id.button5);
         pname = findViewById(R.id.editTextText);
@@ -50,7 +48,7 @@ public class add extends AppCompatActivity {
 
                 if(product.isEmpty()||sellingP.isEmpty()||costp.isEmpty()||availables.isEmpty()||expiryd.isEmpty())
                 {
-                    Toast.makeText(add.this,"Please Provide Valid Details",Toast.LENGTH_LONG);
+                    Toast.makeText(update.this,"Please Provide Valid Details",Toast.LENGTH_LONG);
                     finish();
                     return;
                 }
@@ -61,18 +59,19 @@ public class add extends AppCompatActivity {
                     imsr.child(product).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
                         @Override
                         public void onComplete(@NonNull Task<DataSnapshot> task) {
-                       if(task.isSuccessful()){
-                           if(task.getResult().exists()){
-                               Toast.makeText(add.this, "Product Exists", Toast.LENGTH_SHORT).show();
-                           }
-                           else {
-                               imsr.child(product).setValue(imsh);
-                               Toast.makeText(add.this, "Data Saved Successfully", Toast.LENGTH_SHORT).show();
-                           }
-                       }
-                       else{
-                           Toast.makeText(add.this, "Unable to Connect", Toast.LENGTH_SHORT).show();
-                       }
+                            if(task.isSuccessful()){
+                                if(task.getResult().exists()){
+                                    imsr.child(product).setValue(imsh);
+                                    Toast.makeText(update.this, "Data Updated Successfully", Toast.LENGTH_SHORT).show();
+                                }
+                                else {
+                                    Toast.makeText(update.this, "Product Doesn't Exists", Toast.LENGTH_SHORT).show();
+
+                                }
+                            }
+                            else{
+                                Toast.makeText(update.this, "Unable to Connect", Toast.LENGTH_SHORT).show();
+                            }
 
                         }
                     });
@@ -84,7 +83,7 @@ public class add extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(add.this,MainActivity.class));
+                startActivity(new Intent(update.this,MainActivity.class));
                 finish();
             }
         });

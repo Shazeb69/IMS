@@ -13,6 +13,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
@@ -26,7 +28,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-    Button view, add, update, delete,  btn;
+    Button view, add, update, delete,  btn ,fnd;
     EditText pname, sprice, cprice, astock, edate;
     String product,sellingP, costp, availables, expiryd;
 
@@ -56,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         cprice = findViewById(R.id.cp);
         astock = findViewById(R.id.as1);
         edate = findViewById(R.id.ed);
+        fnd = findViewById(R.id.find);
 
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -139,6 +142,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
+                startActivity(new Intent(MainActivity.this, com.example.ims.update.class));
+                finish();
+
             }
         });
 
@@ -148,6 +154,57 @@ public class MainActivity extends AppCompatActivity {
 
                 startActivity(new Intent(MainActivity.this,com.example.ims.delete.class));
                 finish();
+            }
+        });
+
+        fnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                product = String.valueOf(pname.getText());
+                availables = String.valueOf(astock.getText());
+                costp = String.valueOf(cprice.getText());
+                expiryd = String.valueOf(edate.getText());
+                sellingP = String.valueOf(sprice.getText());
+                if(product.isEmpty())
+                {
+                    Toast.makeText(MainActivity.this,"Please Provide Valid Details",Toast.LENGTH_LONG);
+                    finish();
+                    return;
+                }
+                else {
+                    try {
+                        DatabaseReference frdb = FirebaseDatabase.getInstance().getReference("Product");
+                        frdb.child(product).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+                            @Override
+                            public void onComplete(@NonNull Task<DataSnapshot> task) {
+                                if(task.isSuccessful()){
+                                    if(task.getResult().exists()){
+                                        DataSnapshot dsfb = task.getResult();
+                                        String ava = String.valueOf(dsfb.child("stock").getValue());
+                                        String pri = String.valueOf(dsfb.child("price").getValue());
+                                        String dte = String.valueOf(dsfb.child("expiry").getValue());
+                                        String cpr = String.valueOf(dsfb.child("cost").getValue());
+                                        astock.setText(ava);
+                                        cprice.setText(pri);
+                                        edate.setText(dte);
+                                        sprice.setText(cpr);
+
+
+
+
+                                    }else{
+                                        Toast.makeText(MainActivity.this, "Product Doesn't Exist", Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                                else{
+                                    Toast.makeText(MainActivity.this, "Connection Failed", Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        });
+                    }catch (Exception e){
+                        Toast.makeText(MainActivity.this, "Error Occured", Toast.LENGTH_SHORT).show();
+                    }
+                }
             }
         });
 
