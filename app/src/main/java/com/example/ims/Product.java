@@ -1,5 +1,6 @@
 package com.example.ims;
 
+
 public class Product {
 
     public String cost;
