@@ -15,6 +15,12 @@
         android:theme="@style/Theme.IMS"
         tools:targetApi="31">
         <activity
+            android:name=".Mainmenu"
+            android:exported="false" />
+        <activity
+            android:name=".Stock"
+            android:exported="false" />
+        <activity
             android:name=".update"
             android:exported="false" />
         <activity
@@ -37,10 +43,8 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-            </intent-filter>
+            android:exported="false">
+
         </activity>
     </application>
 

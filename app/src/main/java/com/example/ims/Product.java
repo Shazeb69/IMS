@@ -3,11 +3,11 @@ package com.example.ims;
 
 public class Product {
 
-    public String cost;
-    public String expiry;
-    public String price;
-    public String product;
-    public String stock;
+    private String cost;
+    private String expiry;
+    private String price;
+    private String product;
+    private String stock;
 
     public String getCost() {
         return cost;

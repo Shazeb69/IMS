@@ -36,6 +36,9 @@
         android:layout_marginTop="82dp"
         android:layout_marginEnd="57dp"
         android:text="Login"
+        app:icon="@drawable/loginicon_foreground"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
         app:layout_constraintEnd_toEndOf="@+id/ed2"
         app:layout_constraintTop_toBottomOf="@+id/ed2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

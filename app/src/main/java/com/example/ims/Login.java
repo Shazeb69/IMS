@@ -34,7 +34,7 @@ public class Login extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            startActivity(new Intent(Login.this,MainActivity.class));
+            startActivity(new Intent(Login.this,Mainmenu.class));
             finish();
 
         }
@@ -50,10 +50,10 @@ public class Login extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     FirebaseUser user = mAuth.getCurrentUser();
                                     Toast.makeText(Login.this, "Successful",Toast.LENGTH_SHORT).show();
-                                   startActivity(new Intent(Login.this,MainActivity.class));
+                                   startActivity(new Intent(Login.this,Mainmenu.class));
                                    finish();
                                 } else {
-                                    Toast.makeText(Login.this, "Sorry unsuccessful",
+                                    Toast.makeText(Login.this, "Authentication failed: " + task.getException().getMessage(),
                                             Toast.LENGTH_SHORT).show();
                                 }
                             }

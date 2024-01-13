@@ -71,7 +71,8 @@ public class add extends AppCompatActivity {
                            }
                        }
                        else{
-                           Toast.makeText(add.this, "Unable to Connect", Toast.LENGTH_SHORT).show();
+                           Toast.makeText(add.this, "Unable to Connect"+ task.getException().getMessage(),
+                                   Toast.LENGTH_SHORT).show();
                        }
 
                         }
