@@ -40,10 +40,10 @@
         android:backgroundTint="@color/white"
         android:ems="10"
         android:inputType="text"
-        android:text="Inventory Management System"
+        android:text="Product And Stock Management System"
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textSize="24sp"
+        android:textSize="21sp"
         android:textStyle="bold"
         android:visibility="visible"
         tools:visibility="visible" />

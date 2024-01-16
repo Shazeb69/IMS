@@ -4,27 +4,74 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgadd2"
     tools:context=".add">
 
+    <Button
+        android:id="@+id/find"
+        android:layout_width="0dp"
+        android:layout_height="43dp"
+        android:text="Search"
+        app:icon="@drawable/findproducts_foreground"
+        app:iconPadding="0dp"
+        app:iconSize="30dp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/pn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/pn" />
+
     <EditText
-        android:id="@+id/pn"
+        android:id="@+id/ed"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="86dp"
-        android:editable="true"
+        android:layout_marginTop="39dp"
+        android:editable="false"
         android:ems="10"
-        android:enabled="true"
-        android:hint="Product Name"
+        android:enabled="false"
+        android:hint="Expiry Date"
         android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="Expiry Date"
+        android:textColorHint="@color/black"
+        app:layout_constraintStart_toStartOf="@+id/sp"
+        app:layout_constraintTop_toBottomOf="@+id/as1" />
+
+    <EditText
+        android:id="@+id/cp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Cost Price"
+        android:inputType="text"
+        android:text="Cost Price"
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toEndOf="@+id/ad"
+        app:layout_constraintStart_toEndOf="@+id/ad"
+        app:layout_constraintTop_toBottomOf="@+id/ed" />
+
+    <EditText
+        android:id="@+id/sp"
+        android:layout_width="0dp"
+        android:layout_height="39dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="45dp"
+        android:editable="false"
+        android:ems="10"
+        android:enabled="false"
+        android:hint="Selling Price"
+        android:inputType="text"
+        android:text="Selling Price"
+        android:textColorHint="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/ed"
+        app:layout_constraintEnd_toEndOf="@+id/as1"
+        app:layout_constraintStart_toStartOf="@+id/as1"
+        app:layout_constraintTop_toTopOf="@+id/as1" />
 
     <EditText
         android:id="@+id/as1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="1dp"
         android:contextClickable="true"
         android:editable="false"
         android:ems="10"
@@ -32,147 +79,133 @@
         android:hint="Available Stock"
         android:inputType="text"
         android:text="Available Stock"
+        android:textColorHint="@color/black"
         app:layout_constraintStart_toStartOf="@+id/pn"
         app:layout_constraintTop_toBottomOf="@+id/pn" />
 
     <EditText
-        android:id="@+id/sp"
+        android:id="@+id/pn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:layout_marginEnd="1dp"
-        android:editable="false"
+        android:layout_marginStart="58dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginEnd="11dp"
+        android:editable="true"
         android:ems="10"
-        android:enabled="false"
-        android:hint="Selling Price"
+        android:enabled="true"
+        android:hint="Product Name"
         android:inputType="text"
-        android:text="Selling Price"
-        app:layout_constraintEnd_toEndOf="@+id/as1"
-        app:layout_constraintTop_toBottomOf="@+id/as1" />
-
-    <EditText
-        android:id="@+id/ed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="18dp"
-        android:editable="false"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="Expiry Date"
-        android:inputType="text"
-        android:text="Expiry Date"
-        app:layout_constraintStart_toStartOf="@+id/sp"
-        app:layout_constraintTop_toBottomOf="@+id/sp" />
-
-    <EditText
-        android:id="@+id/cp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="19dp"
-        android:editable="false"
-        android:ems="10"
-        android:enabled="false"
-        android:hint="Cost Price"
-        android:inputType="text"
-        android:text="Cost Price"
-        app:layout_constraintStart_toStartOf="@+id/ed"
-        app:layout_constraintTop_toBottomOf="@+id/ed" />
+        android:textColorHint="@color/black"
+        app:layout_constraintEnd_toStartOf="@+id/find"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/vw"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="39dp"
-        android:layout_marginBottom="192dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="16dp"
         android:text="View"
         app:icon="@drawable/viewicon_foreground"
         app:iconPadding="0dp"
         app:iconSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/del"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ad" />
 
     <Button
         android:id="@+id/del"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="21dp"
         android:text="Delete"
         app:icon="@android:drawable/ic_delete"
         app:iconPadding="0dp"
         app:iconSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt2"
-        app:layout_constraintEnd_toEndOf="@+id/upd" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/vw"
+        app:layout_constraintTop_toBottomOf="@+id/upd" />
 
     <Button
         android:id="@+id/bt2"
-        android:layout_width="200dp"
-        android:layout_height="46dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginBottom="64dp"
-        android:text="SignOut"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="25dp"
+        android:layout_marginEnd="16dp"
+        android:text="Signout"
         app:icon="@drawable/signouticon_foreground"
         app:iconPadding="0dp"
-        app:iconSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:iconSize="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.924"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/ad"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toEndOf="@+id/button9"
+        app:layout_constraintTop_toBottomOf="@+id/del" />
 
     <Button
         android:id="@+id/upd"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="24dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="21dp"
         android:text="Update"
         app:icon="@drawable/producticon_foreground"
         app:iconPadding="0dp"
         app:iconSize="30dp"
-        app:layout_constraintBottom_toTopOf="@+id/del"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/ad"
+        app:layout_constraintTop_toBottomOf="@+id/cp" />
 
     <Button
         android:id="@+id/ad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
         android:layout_marginTop="17dp"
         android:text="Add"
         app:icon="@drawable/addicon_foreground"
         app:iconPadding="0dp"
         app:iconSize="30dp"
-        app:layout_constraintStart_toStartOf="@+id/vw"
-        app:layout_constraintTop_toBottomOf="@+id/vw" />
-
-    <Button
-        android:id="@+id/find"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Find"
-        app:icon="@drawable/findproducts_foreground"
-        app:iconPadding="0dp"
-        app:iconSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintEnd_toStartOf="@+id/upd"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cp"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintTop_toBottomOf="@+id/cp" />
 
     <Button
         android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to Mainmenu"
+        android:layout_marginEnd="20dp"
+        android:text="Main menu"
         app:icon="@drawable/backicon_foreground"
         app:iconPadding="0dp"
         app:iconSize="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBaseline_toBaselineOf="@+id/bt2"
         app:layout_constraintEnd_toStartOf="@+id/bt2"
-        app:layout_constraintHorizontal_bias="0.451"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="20dp" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="left"
+        app:constraint_referenced_ids="cp,sp,as1,pn,ed" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="cp,sp,as1,pn,ed"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.91" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

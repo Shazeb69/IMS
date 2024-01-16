@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bgadd2"
     tools:context=".MainActivity"
     tools:layout_editor_absoluteX="175dp"
     tools:layout_editor_absoluteY="-20dp">
@@ -16,6 +17,7 @@
         android:ems="10"
         android:hint="Enter Product Name"
         android:inputType="text"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -30,6 +32,7 @@
         android:enabled="true"
         android:hint="Enter Cost Price"
         android:inputType="text"
+        android:textColorHint="@color/black"
         app:layout_constraintStart_toStartOf="@+id/editTextText3"
         app:layout_constraintTop_toBottomOf="@+id/editTextText3" />
 
@@ -44,6 +47,7 @@
         android:enabled="true"
         android:hint="Enter Expiry Date"
         android:inputType="text"
+        android:textColorHint="@color/black"
         app:layout_constraintEnd_toEndOf="@+id/editTextText5"
         app:layout_constraintTop_toBottomOf="@+id/editTextText5" />
 
@@ -57,6 +61,10 @@
         android:enabled="true"
         android:hint="Enter Selling Price"
         android:inputType="text"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        android:textColorHint="@color/black"
+        android:textColorLink="@color/black"
         app:layout_constraintStart_toStartOf="@+id/editTextText6"
         app:layout_constraintTop_toBottomOf="@+id/editTextText6" />
 
@@ -72,6 +80,7 @@
         android:enabled="true"
         android:hint="Enter Stock"
         android:inputType="text"
+        android:textColorHint="@color/black"
         app:layout_constraintStart_toStartOf="@+id/editTextText"
         app:layout_constraintTop_toBottomOf="@+id/editTextText" />
 
