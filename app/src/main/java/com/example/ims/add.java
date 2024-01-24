@@ -16,6 +16,8 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.lang.reflect.Array;
+
 public class add extends AppCompatActivity {
 
     EditText pname, sprice, cprice, astock, edate;
@@ -48,11 +50,23 @@ public class add extends AppCompatActivity {
                 sellingP = String.valueOf(sprice.getText());
 
 
-                if(product.isEmpty()||sellingP.isEmpty()||costp.isEmpty()||availables.isEmpty()||expiryd.isEmpty())
+                try {
+
+
+                double costint = Double.parseDouble(costp);
+                String[] expirydd = expiryd.split(" ");
+                String days = expirydd[0];
+                String[] avastock = availables.split(" ");
+                String stock = avastock[0];
+                int avaint = Integer.parseInt(stock);
+                int daysint = Integer.parseInt(days);
+                double sellingpp = Double.parseDouble(sellingP);
+
+                if(product.isEmpty()||sellingP.isEmpty()||costp.isEmpty()||availables.isEmpty()||expiryd.isEmpty()||avaint<0||costint<0||daysint<0||sellingpp<0)
                 {
-                    Toast.makeText(add.this,"Please Provide Valid Details",Toast.LENGTH_LONG);
-                    finish();
-                    return;
+                    Toast.makeText(add.this,"Please Provide Valid Details",Toast.LENGTH_SHORT).show();
+
+
                 }
                 else {
                     imsHelper imsh = new imsHelper(product,availables,costp,expiryd,sellingP);
@@ -79,6 +93,10 @@ public class add extends AppCompatActivity {
                     });
                 }
 
+            }
+                catch (Exception e){
+                    Toast.makeText(add.this, "Invalid Input", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
